@@ -18,6 +18,14 @@ collection = Service(name='collection',
 AUTHORIZATION_HEADER = 'Authorization'
 CLIENT_STATE_HEADER = 'X-Client-State'
 
+@collection.options(permission=NO_PERMISSION_REQUIRED)
+def collection_options(request):
+    headers = request.response.headers;
+    headers['Access-Control-Allow-Origin'] = '*';
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS';
+    allowedHeaders = 'authorization, content-type, x-client-state, if-none-match';
+    headers['Access-Control-Allow-Headers'] = allowedHeaders;
+    return '';
 
 @collection.get(permission=NO_PERMISSION_REQUIRED)
 def collection_get(request):

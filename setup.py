@@ -36,7 +36,7 @@ DEPENDENCY_LINKS = [
 ]
 
 setup(name='syncto',
-      version='0.1.0.dev0',
+      version='1.0.0.dev0',
       description='Read Firefox Sync server using Kinto API.',
       long_description=README + "\n\n" + CHANGELOG,
       license='Apache License (2.0)',
